@@ -20,8 +20,10 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
+import logoo from '../assets/logoo.png'
 
 export default {
+  logoo,
   bg,
   chef,
   G,
