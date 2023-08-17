@@ -19,24 +19,15 @@ const Navbar = () => {
           <a href="#about">About</a>
         </li>
         <li className="p__opensans">
-          <a href="#menu">Menu</a>
+          <a href="#menu">Recommend</a>
         </li>
-        <li className="p__opensans">
+        {/* <li className="p__opensans">
           <a href="#awards">Awards</a>
-        </li>
+        </li> */}
         <li className="p__opensans">
           <a href="#contact">Contact</a>
         </li>
       </ul>
-      <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
-          Log In / Registration
-        </a>
-        <div />
-        <a href="/" className="p__opensans">
-          Book Table
-        </a>
-      </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu
           color="#fff"
