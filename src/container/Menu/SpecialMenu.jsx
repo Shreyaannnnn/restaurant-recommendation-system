@@ -54,6 +54,19 @@ const SpecialMenu = () => {
     console.log(data);
   }
 
+
+
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [type, setType] = useState(null);
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
+
+
+
+
+
+
   return(
 
   <div className="app__specialMenu flex__center section__padding" id="menu">
@@ -63,7 +76,7 @@ const SpecialMenu = () => {
       <SubHeading title="Select your filters" />
       <h1 className="headtext__cormorant">Recommendation</h1>
 
-      <div className="p__opensans">
+      {/* <div className="p__opensans">
       <div>
         <label htmlFor="minCost">Min Cost:</label>
         <input
@@ -117,10 +130,61 @@ const SpecialMenu = () => {
           <option value="option9">Option 9</option>
         </select>
       </div>
-    </div>
+    </div> */}
 
 
+<div className='p__opensans'>
 
+<form>
+        <label>
+          <input
+            type="radio"
+            name="option"
+            value="option1"
+            onChange={() => handleOptionChange('input1')}
+          />
+          Like Restaurants
+        </label>
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="option"
+            value="option2"
+            onChange={() => handleOptionChange('input2')}
+          />
+          Cost
+        </label>
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="option"
+            value="option3"
+            onChange={() => handleOptionChange('input3')}
+          />
+          Rating
+        </label>
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="option"
+            value="option4"
+            onChange={() => handleOptionChange('input4')}
+          />
+          Cuisines
+        </label>
+      </form>
+
+
+      {selectedOption && (
+        <div className="input-container" id={selectedOption}>
+          <label htmlFor={`field${selectedOption}`}>Field {selectedOption}:</label>
+          <input type="text" id={`field${selectedOption}`} name={`field${selectedOption}`} />
+        </div>
+      )}
+      </div>
 
 
 
