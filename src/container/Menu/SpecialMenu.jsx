@@ -135,7 +135,8 @@ const SpecialMenu = () => {
 
 <div className='p__opensans'>
 
-<form>
+<form style={{display:'inline-block'}}>
+  <div className='radiogroup'>
         <label>
           <input
             type="radio"
@@ -175,6 +176,7 @@ const SpecialMenu = () => {
           />
           Cuisines
         </label>
+        </div>
       </form>
 
 

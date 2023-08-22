@@ -84,3 +84,27 @@
     line-height: 48.5px;
   }
 }
+
+.radiogroup{
+  display: flex;
+  margin-right: 10px;
+  font-size: 30px;
+}
+  label{
+    padding-left: 45px;
+  }
+
+
+  .radiogroup input[type="radio"] {
+    appearance: none; /* Hide default radio button appearance */
+    -webkit-appearance: none;
+    width: 25px; /* Set the width and height of the custom radio button */
+    height: 25px;
+    border-radius: 50%; /* Make it a circle */
+    border: 2px solid #333; /* Add border to simulate the circle */
+    margin-right: 5px; /* Adjust spacing as needed */
+  }
+  
+  .radiogroup input[type="radio"]:checked {
+    background-color: #c71414; /* Change background color when selected */
+  }
