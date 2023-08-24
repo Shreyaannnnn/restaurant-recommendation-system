@@ -119,3 +119,7 @@
   input.radcity[type="radio"]:checked{
     background-color: rgb(54, 48, 226);
   }
+
+  .inputss{
+    margin-top: 25px;
+  }

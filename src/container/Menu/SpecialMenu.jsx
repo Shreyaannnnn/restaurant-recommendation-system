@@ -40,9 +40,9 @@ const SpecialMenu = () => {
 
   const onSubmit = async() =>{
     let url = '';
-    let respone = '';
+    // let respone = '';
     console.log("pressed");
-    console.log(selectedOption1)
+    // console.log(selectedOption1)
     console.log(selectedOption2);
     // switch(city){
     //   case 'delhi':
@@ -125,6 +125,7 @@ const SpecialMenu = () => {
             body: JSON.stringify({ user_data: selectedOption2 }),
           });
           const data = await response.json();
+          console.log(data);
           const recommendationsArray = JSON.parse(data.recommendations);
           setRecommendations(recommendationsArray);
       }
@@ -139,6 +140,7 @@ const SpecialMenu = () => {
             body: JSON.stringify({ user_data:selectedOption3 }),
           });
           const data = await response.json();
+          console.log(data.recommendations)
           const recommendationsArray = JSON.parse(data.recommendations);
           setRecommendations(recommendationsArray);
       }
@@ -249,10 +251,6 @@ const SpecialMenu = () => {
 
 <div className='p__opensans'>
 
-
-
-
-
 <form style={{display:'inline-block'}}>
   <div className='radiocity radiogroup'>
         <label>
@@ -276,8 +274,7 @@ const SpecialMenu = () => {
         </label>
         </div>
       </form>
-
-
+    </div>
 
 
 
@@ -285,6 +282,7 @@ const SpecialMenu = () => {
 
 
 {/* FOR FUNCTION TYPES */}
+<div className='p__opensans'>
 <form style={{display:'inline-block'}}>
   <div className='radiogroup'>
         <label>
@@ -311,28 +309,28 @@ const SpecialMenu = () => {
           <input
             type="radio"
             name="option"
-            value="option3"
-            onChange={() => handleOptionChange('input3')}
-          />
-          Reviews
-        </label>
-        <br />
-        <label>
-          <input
-            type="radio"
-            name="option"
             value="option4"
             onChange={() => handleOptionChange('input4')}
           />
           Cuisines
         </label>
+        <label>
+          <input
+            type="radio"
+            name="option"
+            value="option3"
+            onChange={() => handleOptionChange('input3')}
+          />
+          Similar Restaurants
+        </label>
+        <br />
         </div>
       </form>
       </div>
 
       <div className="p__opensans">
       {selectedOption === 'input1' && (
-      <div>
+      <div className='inputss'>
         <label htmlFor="minCost">Min Cost:</label>
         <input
           type="range"
@@ -353,7 +351,7 @@ const SpecialMenu = () => {
           type="range"
           id="maxCost"
           min={1}
-          max={9999}
+          max={8500}
           value={costRange[1]}
           onChange={handleMaxCostChange}
         />
@@ -362,7 +360,7 @@ const SpecialMenu = () => {
       )}
 
       {selectedOption === 'input2' && (
-      <div>
+      <div className='inputss'>
         <label htmlFor="select1">Minimum Rating:</label>
         <select id="select1" value={selectedOption1} onChange={handleSelect1Change}>
           <option value="">Select an option</option>
@@ -376,7 +374,7 @@ const SpecialMenu = () => {
       )}
 
       {selectedOption === 'input3' && (
-      <div>
+      <div className='inputss'>
         <label htmlFor="select2">Enter Restaurant Name:</label>
         {/* <select id="select2" value={selectedOption2} onChange={handleSelect2Change}>
           <option value="">Select an option</option>
@@ -388,7 +386,7 @@ const SpecialMenu = () => {
       </div>
       )}
       {selectedOption === 'input4' && (
-      <div>
+      <div className='inputss'>
         <label htmlFor="select3">Enter Cuisine:</label>
         {/* <select id="select3" value={selectedOption3} onChange={handleSelect3Change}>
           <option value="">Select an option</option>
